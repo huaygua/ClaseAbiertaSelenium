@@ -1,4 +1,4 @@
-for i in range(2):
+for i in range(5):
     print("----------------------------------------------------------------")
     nombre_comprador = input("Ingresar nombre: ")
     apellido_comprador = input("Ingresa apellido: ")
@@ -11,6 +11,9 @@ for i in range(2):
         precio_marca = 120000
     elif marca == 'Fiat':
         precio_marca = 80000
+    else:
+        print("No poseemos stock de la marca solicitada")
+        continue
 
     puertas = input("Ingresar cantidad de puertas: ")
     if puertas == '2':
@@ -19,6 +22,9 @@ for i in range(2):
         precio_puertas = 65000
     elif puertas == '5':
         precio_puertas = 78000
+    else:
+        print("No poseemos stock con la cantidad de puertas solicitada")
+        continue
 
     color = input("Ingresar color: ")
     color = color.lower()
@@ -28,8 +34,11 @@ for i in range(2):
         precio_color = 20000
     elif color == 'negro':
         precio_color = 30000
+    else:
+        print("No poseemos stock del color solicitada")
+        continue
     
     precio_final = precio_marca + precio_puertas + precio_color
-    print("El cliente: "+nombre_comprador+" "+apellido_comprador)
-    print("Descripciòn: Compra de auto marca "+ marca+" con "+ puertas+" puertas color "+ color )
+    print("Cliente: "+nombre_comprador+" "+apellido_comprador)
+    print("Descripciòn: Realizo la compra de un auto marca "+ marca+" de color "+color +" con "+ puertas+" puertas.")
     print("Precio total: "+str(precio_final))
